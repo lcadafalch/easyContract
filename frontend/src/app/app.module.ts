@@ -7,6 +7,11 @@ import { RegisterComponent } from './div/register/register.component';
 import { UsuarioComponent } from './div/usuario/usuario.component';
 import { ContratoComponent } from './div/contrato/contrato.component';
 import { LoginComponent } from './div/login/login.component';
+import{RouterModule} from '@angular/router';
+
+// Routes
+import{ROUTES} from './app.routes' 
+import { from } from 'rxjs';
 
 @NgModule({
   declarations: [
@@ -18,7 +23,8 @@ import { LoginComponent } from './div/login/login.component';
     LoginComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    RouterModule.forRoot(ROUTES ,{useHash:true})
   ],
   providers: [],
   bootstrap: [AppComponent]
