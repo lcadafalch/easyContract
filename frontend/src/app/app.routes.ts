@@ -13,7 +13,7 @@ export const ROUTES: Routes = [
     {path:'home', component:HomeComponent},
     {path:'usuario', component:UsuarioComponent},
     {path:'contrato', component:ContratoComponent},
-    {path:'', pathMatch:'full', redirectTo:'login'},
-    {path:'**', pathMatch:'full', redirectTo:'login'}
+    {path:'', pathMatch:'full', redirectTo:'register'},
+    {path:'**', pathMatch:'full', redirectTo:'register'}
 
 ];
