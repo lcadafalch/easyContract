@@ -7,7 +7,7 @@
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/#/usuario">
                 <div class="sidebar-brand-icon rotate-n-15">
                 </div>
                 <div class="sidebar-brand-text mx-3">EasyContracts.es</div>
@@ -33,8 +33,7 @@
 
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
-                    aria-expanded="true" aria-controls="collapseTwo">
+                <a class="nav-link collapsed" href="/#/contrato">
                     <i class="fas fa-plus fa-cog"></i>
                     <span>nuevo contrato</span>
                 </a>
@@ -43,21 +42,19 @@
 
             <!-- Nav Item - Utilities Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
-                    aria-expanded="true" aria-controls="collapseUtilities">
-                    <i class="fas fa-fw fa-wrench"></i>
+                <a class="nav-link collapsed" href="#" data-target="#collapseUtilities" aria-expanded="true"
+                    aria-controls="collapseUtilities">
+                    <i class="fas fa-file-contract"></i>
                     <span>Mis contratos</span>
                 </a>
-                <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
-                    data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Custom Utilities:</h6>
-                        <a class="collapse-item" href="utilities-color.html">Colors</a>
-                        <a class="collapse-item" href="utilities-border.html">Borders</a>
-                        <a class="collapse-item" href="utilities-animation.html">Animations</a>
-                        <a class="collapse-item" href="utilities-other.html">Other</a>
-                    </div>
-                </div>
+
+            </li>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-target="#collapseUtilities">
+                    <i class="fas fa-file-signature"></i>
+                    <span>Gestionar nuevos contratos</span>
+                </a>
+
             </li>
 
             <!-- Divider -->
@@ -242,7 +239,8 @@
                                     </div>
                                     <div class="font-weight-bold">
                                         <div class="text-truncate">Hi there! I am wondering if you can help me with a
-                                            problem I've been having.</div>
+                                            problem I've been
+                                            having.</div>
                                         <div class="small text-gray-500">Emily Fowler · 58m</div>
                                     </div>
                                 </a>
@@ -254,7 +252,8 @@
                                     </div>
                                     <div>
                                         <div class="text-truncate">I have the photos that you ordered last month, how
-                                            would you like them sent to you?</div>
+                                            would you like them
+                                            sent to you?</div>
                                         <div class="small text-gray-500">Jae Chun · 1d</div>
                                     </div>
                                 </a>
@@ -266,7 +265,8 @@
                                     </div>
                                     <div>
                                         <div class="text-truncate">Last month's report looks great, I am very happy with
-                                            the progress so far, keep up the good work!</div>
+                                            the progress so
+                                            far, keep up the good work!</div>
                                         <div class="small text-gray-500">Morgan Alvarez · 2d</div>
                                     </div>
                                 </a>
@@ -278,7 +278,8 @@
                                     </div>
                                     <div>
                                         <div class="text-truncate">Am I a good boy? The reason I ask is because someone
-                                            told me that people say this to all dogs, even if they aren't good...</div>
+                                            told me that people
+                                            say this to all dogs, even if they aren't good...</div>
                                         <div class="small text-gray-500">Chicken the Dog · 2w</div>
                                     </div>
                                 </a>
@@ -324,66 +325,96 @@
                 </nav>
                 <!-- End of Topbar -->
 
+                <!-- Begin Page Content -->
+                <div class="container-fluid">
 
 
 
+                    <!-- DataTales Example -->
+                    <div class="card shadow mb-4">
+                        <div class="card-header py-3">
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                    <div class="card">
+                                        <div class="card-body text-black-400 text-center">
+                                            <h3>Venta de coche</h3>
+                                        </div>
+                                        <hr>
 
-                <!-- edit form column -->
-                <div class="col-md-9 personal-info">
-                    <h3>Crea un contrato </h3>
-                    <p>Usa esta plantilla para crear un contrato entre tu y otro propietario/cliente</p>
+                                        El usuario @Antonio132
+                                        con el DNI 46423253
+                                        vende al usuario @vwegw2e23
+                                        DNI r34235253
+                                        vende un opel Corsa del año 2007 con matricula 452323D
+                                        por la cantidad de 1499 €
 
-                    <form class="form-horizontal" role="form">
-                        <div class="form-group">
-                            <label class="col-lg-3 control-label">Titulo </label>
-                            <div class="col-lg-8">
-                                <input class="form-control" placeholder="Ejemplo: Venta de coche" type="text">
+                                        <hr>
+                                        CANTIDAD: 1499€
+                                        <hr>
+                                        FECHA DE VENCIMIENTO : 23/12/2021
+                                        <hr>
+                                        USUARIO QUE ENVIA: @Pedroladrg
+                                        <hr>
+                                        <div class="col-md-8">
+                                            <input type="button" class="btn btn-primary" value="Aceptar contrato">
+                                            <span></span>
+                                            <input type="reset" class="btn btn-danger ml-4" href="/#/home"
+                                                value="Denegar Contrato">
+                                        </div>
+
+                                    </div>
+                                </table>
                             </div>
                         </div>
-                        <div class="form-group">
-                            <label class="col-lg-3 control-label">Texto</label>
-                            <div class="col-lg-8">
+                    </div>
 
-                                <textarea class="form-control textoform" name="textarea" rows="10" cols="50"
-                                    placeholder="  Ejemplo: Venta de coche del propietario con DNI 245235 a propietario con DNI 455233"></textarea>
+                </div>
+                <!-- /.container-fluid -->
 
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="col-lg-3 control-label">Usuario Destinatario</label>
-                            <div class="col-lg-8">
-                                <input class="form-control" type="text" value=""  placeholder="  Ejemplo: antonioJosé">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                                <label class="col-lg-3 control-label">Cantidad total a pagar: €</label>
-                                <div class="col-lg-8">
-                                    <input class="form-control" type="text" value="">
-                                </div>
-                            </div>
-                            <p>Recuerde que todos los pagos serán en moneda digital</p>
+            </div>
+            <!-- End of Main Content -->
 
-                        
-                        <div class="form-group">
-                            <label class="col-lg-3 control-label">Fecha finalización del contrato</label>
-                            <div class="col-lg-8">
+            <!-- Footer -->
+            <footer class="sticky-footer bg-white">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>Copyright &copy; Your Website 2019</span>
+                    </div>
+                </div>
+            </footer>
+            <!-- End of Footer -->
 
-                                <input type="date" id="start" name="trip-start" value="2018-07-22" min="2018-01-01"
-                                    max="2030-12-31">
+        </div>
+        <!-- End of Content Wrapper -->
 
-                            </div>
-                        </div>
+    </div>
+    <!-- End of Page Wrapper -->
 
-                        <div class="form-group">
-                            <label class="col-md-3 control-label"></label>
-                            <div class="col-md-8">
-                                <input type="button" class="btn btn-primary" value="Guardar cambios"> 
-                                <span></span>
-                                <input type="reset" class="btn btn-danger ml-4" href="/#/home" value="Cancelar Contrato">
-                            </div>
-                        </div>
-                    </form>
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+    <!-- Logout Modal-->
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                    <a class="btn btn-primary" href="login.html">Logout</a>
                 </div>
             </div>
         </div>
-        <hr>
+    </div>
+
+</body>

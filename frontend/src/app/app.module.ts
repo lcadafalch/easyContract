@@ -12,6 +12,8 @@ import{RouterModule} from '@angular/router';
 // Routes
 import{ROUTES} from './app.routes' 
 import { from } from 'rxjs';
+import { NuevosContratosComponent } from './div/nuevos-contratos/nuevos-contratos.component';
+import { MisContratosComponent } from './div/mis-contratos/mis-contratos.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { from } from 'rxjs';
     RegisterComponent,
     UsuarioComponent,
     ContratoComponent,
-    LoginComponent
+    LoginComponent,
+    NuevosContratosComponent,
+    MisContratosComponent
   ],
   imports: [
     BrowserModule,
