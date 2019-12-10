@@ -18,6 +18,8 @@ import{ROUTES} from './app.routes'
 import { from } from 'rxjs';
 import { NuevosContratosComponent } from './div/nuevos-contratos/nuevos-contratos.component';
 import { MisContratosComponent } from './div/mis-contratos/mis-contratos.component';
+import { ServicioService } from './servicios/servicio.service';
+import { UsuarioService } from './servicios/usuario.service';
 
 @NgModule({
   declarations: [
@@ -35,7 +37,7 @@ import { MisContratosComponent } from './div/mis-contratos/mis-contratos.compone
     BrowserModule,
     RouterModule.forRoot(ROUTES ,{useHash:true})
   ],
-  providers: [],
+  providers: [ServicioService,UsuarioService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

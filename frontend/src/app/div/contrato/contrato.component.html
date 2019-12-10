@@ -320,17 +320,13 @@
                 </nav>
                 <!-- End of Topbar -->
 
-
-
-
-
                 <!-- edit form column -->
                 <div class="col-md-9 personal-info">
                     <h3> CREA UN CONTRATO </h3>
                     <p>Usa esta plantilla para crear un contrato entre tu y otro propietario/cliente</p>
                     <br>
                     <div class="alert alert-info" role="alert">
-                            <strong>RECORDATORIO!</strong> Todos los pagos se harán con moneda digital.</div>
+                        <strong>RECORDATORIO!</strong> Todos los pagos se harán con moneda digital.</div>
 
                     <form class="form-horizontal" role="form">
                         <div class="form-group">
@@ -357,7 +353,7 @@
                         <div class="form-group">
                             <label class="col-lg-3 control-label">CANTIDAD €</label>
                             <div class="col-lg-8">
-                                <input class="form-control" type="text" value="">{{bitcoinconvertido}} BTC 
+                                <input class="form-control" type="text" value="">{{bitcoinconvertido}} BTC
                             </div>
                             <br>
                             <input (click)="convertirBtc()" type="button" class="btn btn-primary ml-3"
@@ -379,13 +375,12 @@
                         <div class="form-group">
                             <label class="col-md-3 control-label"></label>
                             <div class="col-md-8">
-                                <input type="button" class="btn btn-primary" value="Crear contrato">
+                                <input data-toggle="modal" data-target="#exampleModal" type="button"
+                                    class="btn btn-primary" value="Crear contrato">
                                 <span></span>
                                 <input onClick="window.location.reload();" type="reset" class="btn btn-danger ml-4"
                                     href="/#/home" value="Cancelar Contrato">
                             </div>
-
-
                         </div>
                     </form>
                 </div>
@@ -394,3 +389,23 @@
         <hr>
     </div>
 </body>
+
+
+<!-- Modal -->
+<div class="modal" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="alert alert-primary" role="alert">
+                    <strong>Revise que esté correcto!</strong>
+                </div>
+
+                <p>Una vez hecho el contrato , no se puede modificar, asegúrese de que esté todo correcto antes de enviarlo</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Enviar al destinatario</button>
+                <button type="button" class="btn btn-danger">Aún no!</button>
+            </div>
+        </div>
+    </div>
+</div>
