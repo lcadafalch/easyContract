@@ -9,8 +9,12 @@ import { ContratoComponent } from './div/contrato/contrato.component';
 import { LoginComponent } from './div/login/login.component';
 import{RouterModule} from '@angular/router';
 
+// import módulo HTTP 
+import{HttpClientModule } from '@angular/common/http'
+
 // Routes
 import{ROUTES} from './app.routes' 
+
 import { from } from 'rxjs';
 import { NuevosContratosComponent } from './div/nuevos-contratos/nuevos-contratos.component';
 import { MisContratosComponent } from './div/mis-contratos/mis-contratos.component';
@@ -27,6 +31,7 @@ import { MisContratosComponent } from './div/mis-contratos/mis-contratos.compone
     MisContratosComponent
   ],
   imports: [
+    HttpClientModule,  // modulo HTTP
     BrowserModule,
     RouterModule.forRoot(ROUTES ,{useHash:true})
   ],

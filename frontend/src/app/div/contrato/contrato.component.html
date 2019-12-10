@@ -33,8 +33,7 @@
 
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
-                    aria-expanded="true" aria-controls="collapseTwo">
+                <a class="nav-link collapsed" href="/#/contrato">
                     <i class="fas fa-plus fa-cog"></i>
                     <span>nuevo contrato</span>
                 </a>
@@ -43,23 +42,20 @@
 
             <!-- Nav Item - Utilities Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
+                <a class="nav-link collapsed" href="/#/misContratos" data-target="#collapseUtilities"
                     aria-expanded="true" aria-controls="collapseUtilities">
-                    <i class="fas fa-fw fa-wrench"></i>
+                    <i class="fas fa-file-contract"></i>
                     <span>Mis contratos</span>
                 </a>
-                <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
-                    data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Custom Utilities:</h6>
-                        <a class="collapse-item" href="utilities-color.html">Colors</a>
-                        <a class="collapse-item" href="utilities-border.html">Borders</a>
-                        <a class="collapse-item" href="utilities-animation.html">Animations</a>
-                        <a class="collapse-item" href="utilities-other.html">Other</a>
-                    </div>
-                </div>
-            </li>
 
+            </li>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="/#/nuevosContratos" data-target="#collapseUtilities">
+                    <i class="fas fa-file-signature"></i>
+                    <span>Gestionar nuevos contratos</span>
+                </a>
+
+            </li>
             <!-- Divider -->
             <hr class="sidebar-divider">
 
@@ -330,18 +326,21 @@
 
                 <!-- edit form column -->
                 <div class="col-md-9 personal-info">
-                    <h3>Crea un contrato </h3>
+                    <h3> CREA UN CONTRATO </h3>
                     <p>Usa esta plantilla para crear un contrato entre tu y otro propietario/cliente</p>
+                    <br>
+                    <div class="alert alert-info" role="alert">
+                            <strong>RECORDATORIO!</strong> Todos los pagos se harán con moneda digital.</div>
 
                     <form class="form-horizontal" role="form">
                         <div class="form-group">
-                            <label class="col-lg-3 control-label">Titulo </label>
+                            <label class="col-lg-3 control-label">TITULO</label>
                             <div class="col-lg-8">
                                 <input class="form-control" placeholder="Ejemplo: Venta de coche" type="text">
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="col-lg-3 control-label">Texto</label>
+                            <label class="col-lg-3 control-label">TEXTO DEL CONTRATO</label>
                             <div class="col-lg-8">
 
                                 <textarea class="form-control textoform" name="textarea" rows="10" cols="50"
@@ -350,22 +349,25 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="col-lg-3 control-label">Usuario Destinatario</label>
+                            <label class="col-lg-3 control-label">USUARIO DESTINATARIO</label>
                             <div class="col-lg-8">
-                                <input class="form-control" type="text" value=""  placeholder="  Ejemplo: antonioJosé">
+                                <input class="form-control" type="text" value="" placeholder="  Ejemplo: antonioJosé">
                             </div>
                         </div>
                         <div class="form-group">
-                                <label class="col-lg-3 control-label">Cantidad total a pagar: €</label>
-                                <div class="col-lg-8">
-                                    <input class="form-control" type="text" value="">
-                                </div>
+                            <label class="col-lg-3 control-label">CANTIDAD €</label>
+                            <div class="col-lg-8">
+                                <input class="form-control" type="text" value="">{{bitcoinconvertido}} BTC 
                             </div>
-                            <p>Recuerde que todos los pagos serán en moneda digital</p>
+                            <br>
+                            <input (click)="convertirBtc()" type="button" class="btn btn-primary ml-3"
+                                value="Convertir a Bitcoin">
+                        </div>
 
-                        
+                        <br>
+
                         <div class="form-group">
-                            <label class="col-lg-3 control-label">Fecha finalización del contrato</label>
+                            <label class="col-lg-3 control-label">FECHA FINALIZACIÓN</label>
                             <div class="col-lg-8">
 
                                 <input type="date" id="start" name="trip-start" value="2018-07-22" min="2018-01-01"
@@ -377,13 +379,18 @@
                         <div class="form-group">
                             <label class="col-md-3 control-label"></label>
                             <div class="col-md-8">
-                                <input type="button" class="btn btn-primary" value="Guardar cambios"> 
+                                <input type="button" class="btn btn-primary" value="Crear contrato">
                                 <span></span>
-                                <input type="reset" class="btn btn-danger ml-4" href="/#/home" value="Cancelar Contrato">
+                                <input onClick="window.location.reload();" type="reset" class="btn btn-danger ml-4"
+                                    href="/#/home" value="Cancelar Contrato">
                             </div>
+
+
                         </div>
                     </form>
                 </div>
             </div>
         </div>
         <hr>
+    </div>
+</body>
