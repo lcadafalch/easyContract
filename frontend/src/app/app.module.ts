@@ -12,6 +12,11 @@ import{RouterModule} from '@angular/router';
 // import módulo HTTP 
 import{HttpClientModule } from '@angular/common/http'
 
+
+// modulo formulario
+import { FormsModule } from '@angular/forms';
+
+
 // Routes
 import{ROUTES} from './app.routes' 
 
@@ -34,6 +39,7 @@ import { UsuarioService } from './servicios/usuario.service';
   ],
   imports: [
     HttpClientModule,  // modulo HTTP
+    FormsModule,      // modulo FORMS
     BrowserModule,
     RouterModule.forRoot(ROUTES ,{useHash:true})
   ],

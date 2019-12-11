@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ServicioService } from "src/app/servicios/servicio.service" // importar servicio
+import { from } from 'rxjs';
+
 
 
 @Component({
@@ -8,7 +11,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MisContratosComponent {
 
-  constructor() {
+  
+
+  constructor( public servicioContrato: ServicioService) {
+
 
 
   }

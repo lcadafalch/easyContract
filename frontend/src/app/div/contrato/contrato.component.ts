@@ -9,24 +9,42 @@ import { from } from 'rxjs';
 })
 export class ContratoComponent {
 
+
+  formData = {
+    titulo: "",
+    texto: "",
+    usuarioDestinatario: "",
+    cantidad: "",
+    fechaFinalizacion: ""
+  }
+
+
+  //BTC / USD
   bitcoinconvertido = "";
 
+  constructor(public servicioContrato: ServicioService) { }
 
+  convertirBtc() {
 
-  constructor(public _apiPrecio: ServicioService) {}
+    let precioUsuario: any = (<HTMLInputElement>document.querySelectorAll("#content > div > form > div:nth-child(4) > div > input")[0]).value
+    console.log(precioUsuario)
 
-     convertirBtc() {
+    this.servicioContrato.setPrecioUsuario(precioUsuario)
+    this.servicioContrato.recibirPrecioBitcoin().subscribe((servicioContrato: any) => {
 
-      let precioUsuario: any = (<HTMLInputElement>document.querySelectorAll("#content > div > form > div:nth-child(4) > div > input")[0]).value
-      console.log(precioUsuario)
+      this.bitcoinconvertido = servicioContrato;
 
-      this._apiPrecio.setPrecioUsuario(precioUsuario)
-      this._apiPrecio.recibirPrecioBitcoin().subscribe((_apiPrecio: any) => {
-
-          this.bitcoinconvertido = _apiPrecio;
-
-          console.log(this.bitcoinconvertido)
-        })
-
-    }
+      console.log(this.bitcoinconvertido)
+    })
   }
+
+  // Contrato Post Backend
+  postContrato() {
+
+  let contrato = this.servicioContrato.RegistrarContrato({titulo:this.formData.titulo, texto:this.formData.texto,usuarioDestinatario:this.formData.usuarioDestinatario,fechaFinalizacion:this.formData.fechaFinalizacion})
+  console.log(contrato)
+
+
+
+  }
+}
