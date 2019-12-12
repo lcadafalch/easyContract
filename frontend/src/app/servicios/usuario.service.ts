@@ -8,6 +8,7 @@ import { Subscription } from 'rxjs';
 })
 export class UsuarioService {
 
+  // conexion usuario backend
   observablepost: Subscription
   apiUrl = "http://localhost:3000/";
   cache: Object = ""
@@ -17,6 +18,7 @@ export class UsuarioService {
     console.log(_data)
   }
 
+  //Conexion Backend
   registerUser(datosUsuario) {
     console.log(datosUsuario)
 

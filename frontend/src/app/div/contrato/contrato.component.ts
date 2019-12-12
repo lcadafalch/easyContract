@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ServicioService } from "src/app/servicios/servicio.service" // importar servicio
+import { FormsModule } from "@angular/forms";
 import { from } from 'rxjs';
 
 @Component({
@@ -10,27 +11,27 @@ import { from } from 'rxjs';
 export class ContratoComponent {
 
 
-  formData = {
+  formContrato = {
     titulo: "",
     texto: "",
     usuarioDestinatario: "",
     cantidad: "",
-    fechaFinalizacion: ""
+    fechaFinalizacion:Date
   }
 
 
   //BTC / USD
   bitcoinconvertido = "";
 
-  constructor(public servicioContrato: ServicioService) { }
+  constructor(public _servicioContrato: ServicioService) { }
 
   convertirBtc() {
 
     let precioUsuario: any = (<HTMLInputElement>document.querySelectorAll("#content > div > form > div:nth-child(4) > div > input")[0]).value
     console.log(precioUsuario)
 
-    this.servicioContrato.setPrecioUsuario(precioUsuario)
-    this.servicioContrato.recibirPrecioBitcoin().subscribe((servicioContrato: any) => {
+    this._servicioContrato.setPrecioUsuario(precioUsuario)
+    this._servicioContrato.recibirPrecioBitcoin().subscribe((servicioContrato: any) => {
 
       this.bitcoinconvertido = servicioContrato;
 
@@ -40,11 +41,8 @@ export class ContratoComponent {
 
   // Contrato Post Backend
   postContrato() {
-
-  let contrato = this.servicioContrato.RegistrarContrato({titulo:this.formData.titulo, texto:this.formData.texto,usuarioDestinatario:this.formData.usuarioDestinatario,fechaFinalizacion:this.formData.fechaFinalizacion})
-  console.log(contrato)
-
-
-
-  }
+    if (this.formContrato.titulo != "")
+      this._servicioContrato.formularioContrato({ titulo: this.formContrato.titulo, texto: this.formContrato.texto, usuarioDestinatario: this.formContrato.usuarioDestinatario, cantidad: this.formContrato.cantidad, fechaFinalizacion: this.formContrato.fechaFinalizacion })
+     
+  } 
 }

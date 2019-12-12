@@ -9,7 +9,7 @@ export class ServicioService {
 
   //Conexion contrato backend
   observablepost: Subscription
-  apiUrl = "http://localhost:3000/";
+  apiUrl = "http://localhost:3000/"; 
   cache: Object = ""
 
 
@@ -30,15 +30,18 @@ export class ServicioService {
     return this._http.get(`https://blockchain.info/tobtc?currency=EUR&value=${this.precioUsuario}`)
 
   }
+ 
+  //Conexion Backend formulario
+  formularioContrato(datosContrato) {
+    if (datosContrato.name != "") {
+      console.log(datosContrato)
 
-  //Conexion Backend
-  RegistrarContrato(datosContrato) {
-    console.log(datosContrato)
+      let cache = this._data.post(this.apiUrl + "logearUsuario", datosContrato)
+        .subscribe((data) => {
+          this.cache = data
 
-    let cache = this._data.post(this.apiUrl + "registrarContrato", datosContrato)
-      .subscribe((data) => {
-        this.cache = data
-       
-      })
+        }
+        )
+    }
   }
 }
