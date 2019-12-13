@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ServicioService } from "src/app/servicios/servicio.service" // importar servicio
+import { ServicioService } from "src/app/servicios/servicio.service" // importar servicio Contratos
+import { UsuarioService } from "src/app/servicios/usuario.service"
 import { from } from 'rxjs';
 
 
@@ -11,11 +12,12 @@ import { from } from 'rxjs';
 })
 export class MisContratosComponent {
 
-  
-
-  constructor( public servicioContrato: ServicioService) {
 
 
-
+  constructor(public _dataContratos: ServicioService, public _dataUsuarios: UsuarioService) {
   }
+
+  BuscarMisContratos() {
+  }
+
 }

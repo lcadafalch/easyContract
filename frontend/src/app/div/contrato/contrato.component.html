@@ -356,17 +356,28 @@
                                 <input [(ngModel)]="formContrato.cantidad" name="cantidad" class="form-control" type="text" value="">{{bitcoinconvertido}}
                             </div>
                             <br>
-                            <input (click)="convertirBtc()" type="button" class="btn btn-primary ml-3"
+                            <input (click)="convertirBtc()" type="button" class="btn btn-secondary ml-3"
                                 value="Convertir a Bitcoin">
                         </div>
 
                         <br>
+                        
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">FECHA DE INICIO</label>
+                            <div class="col-lg-8">
+
+                                <input  [(ngModel)]="formContrato.fechaInicio" name="fechaInicio" type="date" id="start" name="trip-start" value="2018-07-22" min="2018-01-01"
+                                    max="2030-12-31">
+
+                            </div>
+                        </div>
+
 
                         <div class="form-group">
                             <label class="col-lg-3 control-label">FECHA FINALIZACIÓN</label>
                             <div class="col-lg-8">
 
-                                <input  [(ngModel)]="formContrato.fecha" name="fecha" type="date" id="start" name="trip-start" value="2018-07-22" min="2018-01-01"
+                                <input  [(ngModel)]="formContrato.fechaFinalizacion" name="fechaFinalizacion" type="date" id="start" name="trip-start" value="2018-07-22" min="2018-01-01"
                                     max="2030-12-31">
 
                             </div>

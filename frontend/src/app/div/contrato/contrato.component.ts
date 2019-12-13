@@ -16,7 +16,8 @@ export class ContratoComponent {
     texto: "",
     usuarioDestinatario: "",
     cantidad: "",
-    fechaFinalizacion:Date
+    fechaInicio: Date,
+    fechaFinalizacion: Date
   }
 
 
@@ -41,8 +42,8 @@ export class ContratoComponent {
 
   // Contrato Post Backend
   postContrato() {
-    if (this.formContrato.titulo != "")
-      this._servicioContrato.formularioContrato({ titulo: this.formContrato.titulo, texto: this.formContrato.texto, usuarioDestinatario: this.formContrato.usuarioDestinatario, cantidad: this.formContrato.cantidad, fechaFinalizacion: this.formContrato.fechaFinalizacion })
-     
-  } 
+    if (this.formContrato.titulo != "" )
+      this._servicioContrato.formularioContrato({ titulo: this.formContrato.titulo, texto: this.formContrato.texto, usuarioDestinatario: this.formContrato.usuarioDestinatario, cantidad: this.formContrato.cantidad, fechaInicio: this.formContrato.fechaInicio, fechaFinalizacion: this.formContrato.fechaFinalizacion })
+
+  }
 }

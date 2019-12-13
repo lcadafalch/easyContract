@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ServicioService } from 'src/app/servicios/servicio.service';
 
 @Component({
   selector: 'app-nuevos-contratos',
@@ -7,7 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NuevosContratosComponent implements OnInit {
 
-  constructor() { }
+  constructor(public _contratos:ServicioService) {
+
+    this._contratos.recibirContratos()
+    .subscribe((data:any)=>{
+      console.log(data)
+      console.log("hola")
+
+
+    })
+   }
+
+
+
+
 
   ngOnInit() {
   }

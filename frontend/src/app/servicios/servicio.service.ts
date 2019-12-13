@@ -36,7 +36,7 @@ export class ServicioService {
     if (datosContrato.name != "") {
       console.log(datosContrato)
 
-      let cache = this._data.post(this.apiUrl + "logearUsuario", datosContrato)
+      let cache = this._data.post(this.apiUrl + "crearContrato", datosContrato)
         .subscribe((data) => {
           this.cache = data
 
@@ -44,4 +44,10 @@ export class ServicioService {
         )
     }
   }
+
+  recibirContratos(){
+    return this._http.get(this.apiUrl+"contrato")
+
+  }
+
 }
