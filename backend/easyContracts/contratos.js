@@ -11,30 +11,31 @@ const contratoSchema = new mongoose.Schema({
         type: String,
         require: true,
     },
-    fechaCreacion:{
-        type: Date,
-        require: true,
-    },
-    fechaFinalizacion:{
-        type: Date,
-        require:true
-    },
-    usuarioPropietario:{
-        type: String,
-        require: true,
-        //autopopulate  Usuario
-    },
     usuarioDestinatario:{
         type: String,
         require: true,
 
     },
-    billeteraUsuario:{
+    usuarioPropietario:{
         type: String,
         require: true,
-        //autopopulate billetera
+
     },
     estado:{
+        type: String,
+        require:true,
+    },
+    cantidad:{
+        type: Number,
+        require: true,
+        // ref: 'usuarios',
+        // autopopulate: true
+    },
+    fechaInicio:{
+        type: String,
+        require: true,
+    },
+    fechaFinalizacion:{
         type: String,
         require: true,
     }
@@ -42,4 +43,5 @@ const contratoSchema = new mongoose.Schema({
 
 })
 
+// contratoSchema.plugin(require('mongoose-autopopulate'));
 module.exports = mongoose.model("contrato",contratoSchema);

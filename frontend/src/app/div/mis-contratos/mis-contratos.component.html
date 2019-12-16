@@ -181,8 +181,8 @@
                     <tr>
                       <td> {{contrato.titulo}}</td>
                       <td>{{contrato.usuarioDestinatario}}</td>
-                      <td>Pendiente</td>
-                      <td>{{contrato.cantidad}}$</td>
+                      <td>{{contrato.estado}}</td>
+                      <td>{{contrato.cantidad}} €</td>
                       <td>{{contrato.fechaFinalizacion}}</td>
                       <td><button type="button" class="btn btn-primary" data-toggle="modal"
                           data-target="#exampleModal">ver más</button></td>
@@ -247,7 +247,7 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">{{contrato.titulo}}</h5>
+        <h5 class="modal-title" id="exampleModalLabel"></h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>

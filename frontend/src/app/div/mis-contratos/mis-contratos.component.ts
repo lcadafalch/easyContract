@@ -13,7 +13,7 @@ import { from } from 'rxjs';
 export class MisContratosComponent {
 
   contratos = {};
-  aceptar = true;
+  aceptar ={};
 
 
   constructor(public _contratos: ServicioService) {}
@@ -22,6 +22,8 @@ export class MisContratosComponent {
     this._contratos.recibirContratos()
       .subscribe((data: any) => {
         this.contratos = data
+        this.aceptar = new Array(data.length).fill(true)
+        
       });
   };
 

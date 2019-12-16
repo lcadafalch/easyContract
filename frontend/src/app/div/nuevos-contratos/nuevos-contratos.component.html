@@ -139,7 +139,7 @@
                         </div>
                         <!-- <div *ngIf=aceptar> -->
                         <div *ngFor="let contrato of contratos; let i = index" class="card-body">
-                            <div *ngIf="aceptar" class="table-responsive">
+                            <div *ngIf="aceptar[i]" class="table-responsive">
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <div class="card">
                                         <div class="card-body text-black-400 text-center">
@@ -161,14 +161,14 @@
                                             {{contrato.usuarioDestinatario}}
                                             <hr>
                                             <strong>Estado:</strong>
-                                            pendiente
+                                            {{contrato.estado}}
                                             <hr>
                                         </div>
                                         <div class="col-md-8">
-                                            <input (click)="aceptar =!aceptar" type="button"
+                                            <input (click)="aceptar[i] =!aceptar" type="button"
                                                 class="btn btn-primary margenimput" value="Aceptar contrato">
                                             <span></span>
-                                            <input type="reset" class="btn btn-danger align-self-center ml-5 "
+                                            <input (click)="denegar =!denegar" type="reset" class="btn btn-danger align-self-center ml-5 "
                                                 href="/#/home" value="Denegar Contrato">
                                         </div>
                                     </div>

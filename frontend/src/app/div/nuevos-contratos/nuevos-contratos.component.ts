@@ -9,25 +9,39 @@ import { ServicioService } from 'src/app/servicios/servicio.service';
 export class NuevosContratosComponent implements OnInit {
 
   contratos = {};
-  aceptar = true;
+  aceptar: boolean[];
+  denegar = true;
 
 
-  constructor(public _contratos: ServicioService) {}
+  constructor(public _contratos: ServicioService) { }
   ngOnInit() {
 
     this._contratos.recibirContratos()
       .subscribe((data: any) => {
         this.contratos = data
-      });
-  };
+        console.log(data)
+        if (data) {
+          this.aceptar = new Array(data.length).fill(true)
+        }
 
-  
-  cambiarAceptado(){
-    if(this.aceptar != true){
-      this._contratos.recibirContratos( )
-      .subscribe((data:any)=>{
+      });
+  }
+
+  cambiarAceptado(index: number) {
+    if (this.aceptar[index] != true) {
+
+       this._contratos.recibirContratos()
+       .subscribe((data:any)=>{
         
       })
+    }
+  }
+  cambiarDenegado() {
+    if (this.denegar != true) {
+      this._contratos.recibirContratos()
+        .subscribe((data: any) => {
+
+        })
     }
   }
 };
