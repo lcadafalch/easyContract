@@ -44,10 +44,13 @@ export class ServicioService {
         )
     }
   }
-
+  // Get de recibir contratos
   recibirContratos(){
     return this._http.get(this.apiUrl+"contrato")
-
+   }
+  // Get de la transacción
+  carteraUsuarioEnvia(){
+    return this._http.get(`https://blockchain.info/rawaddr/${this._http}`)
   }
 
 }

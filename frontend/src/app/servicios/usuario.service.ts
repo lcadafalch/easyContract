@@ -17,7 +17,6 @@ export class UsuarioService {
 
     console.log(_data)
   }
-
   //Conexion Backend
   registerUser(datosUsuario) {
     console.log(datosUsuario)

@@ -8,22 +8,26 @@ import { ServicioService } from 'src/app/servicios/servicio.service';
 })
 export class NuevosContratosComponent implements OnInit {
 
-  constructor(public _contratos:ServicioService) {
+  contratos = {};
+  aceptar = true;
+
+
+  constructor(public _contratos: ServicioService) {}
+  ngOnInit() {
 
     this._contratos.recibirContratos()
-    .subscribe((data:any)=>{
-      console.log(data)
-      console.log("hola")
+      .subscribe((data: any) => {
+        this.contratos = data
+      });
+  };
 
-
-    })
-   }
-
-
-
-
-
-  ngOnInit() {
+  
+  cambiarAceptado(){
+    if(this.aceptar != true){
+      this._contratos.recibirContratos( )
+      .subscribe((data:any)=>{
+        
+      })
+    }
   }
-
-}
+};

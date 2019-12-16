@@ -12,12 +12,27 @@ import { from } from 'rxjs';
 })
 export class MisContratosComponent {
 
+  contratos = {};
+  aceptar = true;
 
 
-  constructor(public _dataContratos: ServicioService, public _dataUsuarios: UsuarioService) {
+  constructor(public _contratos: ServicioService) {}
+  ngOnInit() {
+
+    this._contratos.recibirContratos()
+      .subscribe((data: any) => {
+        this.contratos = data
+      });
+  };
+
+  
+  cambiarAceptado(){
+    if(this.aceptar != true){
+      this._contratos.recibirContratos( )
+      .subscribe((data:any)=>{
+        
+      })
+    }
   }
+};
 
-  BuscarMisContratos() {
-  }
-
-}
