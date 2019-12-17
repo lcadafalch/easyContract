@@ -20,9 +20,9 @@ export class NuevosContratosComponent implements OnInit {
     this._contratos.recibirContratos()
       .subscribe((data: any) => {
         this.contratos = data
-        let result = data.filter(e => e.estado === "pendiente");
-        if (result) {
-          this.aceptar = new Array(result.length).fill(true)
+        console.log(data)
+        if (data) {
+          this.aceptar = new Array(data.length).fill(true)
         }
       });
   }
