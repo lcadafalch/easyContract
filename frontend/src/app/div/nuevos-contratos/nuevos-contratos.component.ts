@@ -19,10 +19,12 @@ export class NuevosContratosComponent implements OnInit {
     // Recibe los contratos y los pinta en el DOM
     this._contratos.recibirContratos()
       .subscribe((data: any) => {
-        this.contratos = data
-        console.log(data)
-        if (data) {
-          this.aceptar = new Array(data.length).fill(true)
+        let result = data.filter(e => e.estado === "pendiente"); {
+          this.contratos = result
+          console.log(result)
+          if (result) {
+            this.aceptar = new Array(data.length).fill(true)
+          }
         }
       });
   }
@@ -37,16 +39,14 @@ export class NuevosContratosComponent implements OnInit {
         // Recibe los contratos y los pinta en el DOM
         this._contratos.recibirContratos()
           .subscribe((data: any) => {
-            this.contratos = data
-            let result = data.filter(e => e.estado === "pendiente");
-
-            console.log(result)
-            if (result) {
-              this.aceptar = new Array(data.length).fill(true)
+            let result = data.filter(e => e.estado === "pendiente"); {
+              this.contratos = result
+              console.log(result)
+              if (result) {
+                this.aceptar = new Array(data.length).fill(true)
+              }
             }
-
           });
-      }
-      )
+      })
   }
-}
+};

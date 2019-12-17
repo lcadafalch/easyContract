@@ -20,12 +20,11 @@ export class MisContratosComponent {
   ngOnInit() { 
     this._contratos.recibirContratos()
 
-    .subscribe((data: any) => {
-      const result = data.filter(e => e.estado === "aceptado");
-      console.log(result)
-      this.contratos = result
-
-    });
+    this._contratos.recibirContratos()
+      .subscribe((data: any) => {
+        this.contratos = data
+        console.log(data)
+      });
   }
 
 
@@ -58,5 +57,15 @@ export class MisContratosComponent {
 
       });
   }
-
+  
+  fueraTerminio() {
+    this._contratos.recibirContratos()
+      .subscribe((data: any) => {
+        let fechaHoy:Date = new Date();
+        const fecha = data.filter( f => new Date(f.fechaFinalizacion) < fechaHoy) 
+        console.log(fecha)
+        this.contratos = fecha
+      });
+  }
 }
+

@@ -25,6 +25,7 @@ import { NuevosContratosComponent } from './div/nuevos-contratos/nuevos-contrato
 import { MisContratosComponent } from './div/mis-contratos/mis-contratos.component';
 import { ServicioService } from './servicios/servicio.service';
 import { UsuarioService } from './servicios/usuario.service';
+import { PremiumComponent } from './div/premium/premium.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { UsuarioService } from './servicios/usuario.service';
     ContratoComponent,
     LoginComponent,
     NuevosContratosComponent,
-    MisContratosComponent
+    MisContratosComponent,
+    PremiumComponent
   ],
   imports: [
     HttpClientModule,  // modulo HTTP

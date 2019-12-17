@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ServicioService } from 'src/app/servicios/servicio.service';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +8,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  contratos = {};
+  aceptar = {};
 
-  ngOnInit() {
+
+  constructor(public _contratos: ServicioService) { }
+  ngOnInit() { 
+    this._contratos.recibirContratos()
+
+    .subscribe((data: any) => {
+      this._contratos.recibirContratos()
+      .subscribe((data: any) => {
+        this.contratos = data
+        console.log(data)
+      });
+
+    });
   }
 
 }
