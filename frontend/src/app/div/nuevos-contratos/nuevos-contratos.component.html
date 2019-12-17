@@ -165,10 +165,11 @@
                                             <hr>
                                         </div>
                                         <div class="col-md-8">
-                                            <input (click)="aceptar[i] =!aceptar" type="button"
+                                                <!-- aceptar[i] = !aceptar[i] -->
+                                            <input (click)="cambiarEstado(contrato,'aceptado'); aceptar[i] = !aceptar[i] " type="button"
                                                 class="btn btn-primary margenimput" value="Aceptar contrato">
                                             <span></span>
-                                            <input (click)="denegar =!denegar" type="reset" class="btn btn-danger align-self-center ml-5 "
+                                            <input (click)="  cambiarEstado(contrato,'denegado'); denegar[i] = !denegar[i] " type="reset" class="btn btn-danger align-self-center ml-5 "
                                                 href="/#/home" value="Denegar Contrato">
                                         </div>
                                     </div>

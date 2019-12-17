@@ -24,8 +24,7 @@ export class RegisterComponent implements OnInit {
 
   constructor(public _user: UsuarioService) { }
 
-  // registerEmail: string
-
+// registra el usuario en la base de datos y lo guarda en mongoDB
   register() {
 
     if (this.formData.nombre != "" && this.formData.apellido != "" && this.formData.usuario && this.formData.email != "" && this.formData.password != "") {

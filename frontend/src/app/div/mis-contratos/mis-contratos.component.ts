@@ -13,28 +13,50 @@ import { from } from 'rxjs';
 export class MisContratosComponent {
 
   contratos = {};
-  aceptar ={};
+  aceptar = {};
 
 
-  constructor(public _contratos: ServicioService) {}
-  ngOnInit() {
+  constructor(public _contratos: ServicioService) { }
+  ngOnInit() { 
+    this._contratos.recibirContratos()
 
+    .subscribe((data: any) => {
+      const result = data.filter(e => e.estado === "aceptado");
+      console.log(result)
+      this.contratos = result
+
+    });
+  }
+
+
+  // Recibe los contratos y los pinta en el DOM
+  todos() {
     this._contratos.recibirContratos()
       .subscribe((data: any) => {
         this.contratos = data
-        this.aceptar = new Array(data.length).fill(true)
-        
+        console.log(data)
       });
-  };
-
-  
-  cambiarAceptado(){
-    if(this.aceptar != true){
-      this._contratos.recibirContratos( )
-      .subscribe((data:any)=>{
-        
-      })
-    }
   }
-};
 
+  rechazados() {
+    this._contratos.recibirContratos()
+
+      .subscribe((data: any) => {
+        const result = data.filter(e => e.estado === "denegado");
+        console.log(result)
+        this.contratos = result
+
+      });
+  }
+  aceptados() {
+    this._contratos.recibirContratos()
+
+      .subscribe((data: any) => {
+        const result = data.filter(e => e.estado === "aceptado");
+        console.log(result)
+        this.contratos = result
+
+      });
+  }
+
+}

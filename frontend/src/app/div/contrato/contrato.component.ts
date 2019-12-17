@@ -40,7 +40,7 @@ export class ContratoComponent {
     })
   }
 
-  // Contrato Post Backend
+  // Contrato Post Backend envia los datos al backend y postea en mongo
   postContrato() {
     if (this.formContrato.titulo != "" )
       this._servicioContrato.formularioContrato({ titulo: this.formContrato.titulo, texto: this.formContrato.texto, usuarioDestinatario: this.formContrato.usuarioDestinatario, cantidad: this.formContrato.cantidad, fechaInicio: this.formContrato.fechaInicio, fechaFinalizacion: this.formContrato.fechaFinalizacion })
