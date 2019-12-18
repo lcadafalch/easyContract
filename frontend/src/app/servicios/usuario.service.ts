@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
-import { Subscription } from 'rxjs';
+import { Subscription, Subject } from 'rxjs';
 
 
 @Injectable({
@@ -9,12 +9,15 @@ import { Subscription } from 'rxjs';
 export class UsuarioService {
 
   // conexion usuario backend
+  // SubjLogin:Subject;                         
   observablepost: Subscription
   apiUrl = "http://localhost:3000/";
   cache: Object = ""
+  SubjLogin: Subject<object>;
 
   constructor(public _data: HttpClient) {
 
+    // this.SubjLogin = new Subject<object>();        Created by k-b00t
     console.log(_data)
   }
   //Conexion Backend
@@ -26,6 +29,7 @@ export class UsuarioService {
 
       let cache = this._data.post(this.apiUrl + "registrarUsuario", datosUsuario)
         .subscribe((data) => {
+          // this.SubjLogin.next(data)           Created by k-b00t
           this.cache = data
         })
 
@@ -35,8 +39,8 @@ export class UsuarioService {
     }
   }
 
-// LoginUsuario
-  loginUser(datosUsuario) {
+  // LoginUsuario
+  login(datosUsuario) {
     if (datosUsuario.name != "") {
       console.log(datosUsuario)
 
@@ -63,9 +67,9 @@ export class UsuarioService {
     }
 
   }
-  ngOnDestroy() {
-    this.observablepost.unsubscribe();
-  }
+  // ngOnDestroy() {
+  //   this.observablepost.unsubscribe();
+  // }
 
 }
 
