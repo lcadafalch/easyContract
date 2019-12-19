@@ -38,7 +38,7 @@ server.use((err, req, res, next)=>{
     }
 })
 
-mongoose.connect("mongodb://www.easyContracts.es", { useUnifiedTopology: true, useNewUrlParser: true }, (err) => {
+mongoose.connect("mongodb://www.easycontracts.es", { useUnifiedTopology: true, useNewUrlParser: true }, (err) => {
     if (err) throw err;
     console.log("conexion con mongo hecha!")
 
