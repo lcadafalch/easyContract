@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ServicioService } from "src/app/servicios/servicio.service" // importar servicio
-import { FormsModule } from "@angular/forms";
+import { FormsModule, NgForm } from "@angular/forms";
 import { from } from 'rxjs';
 
 @Component({
@@ -40,7 +40,7 @@ export class ContratoComponent {
   }
 
   // Contrato Post Backend envia los datos al backend y postea en mongo
-  postContrato() {
+  postContrato(form:NgForm):void {
     if (this.formContrato.titulo != "" )
       this._servicioContrato.formularioContrato({ titulo: this.formContrato.titulo, texto: this.formContrato.texto, usuarioDestinatario: this.formContrato.usuarioDestinatario, cantidad: this.formContrato.cantidad, fechaInicio: this.formContrato.fechaInicio, fechaFinalizacion: this.formContrato.fechaFinalizacion })
 

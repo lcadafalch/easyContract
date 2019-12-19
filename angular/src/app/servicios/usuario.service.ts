@@ -11,7 +11,7 @@ export class UsuarioService {
   // conexion usuario backend
   // SubjLogin:Subject;                         
   observablepost: Subscription
-  apiUrl = "http://localhost:3000/";
+  apiUrl = "https://easycontracts.es:3000/";
   cache: Object = ""
   SubjLogin: Subject<object>;
 

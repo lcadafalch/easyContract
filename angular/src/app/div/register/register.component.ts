@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UsuarioService } from "src/app/servicios/usuario.service" // importar servicio
-import { FormsModule } from '@angular/forms';
+import { FormsModule, NgForm } from '@angular/forms';
 import { Subscription } from 'rxjs';
 
 @Component({
@@ -35,7 +35,7 @@ export class RegisterComponent {
 
   // registra el usuario en la base de datos y lo guarda en mongoDB
 
-  register() {
+  register(form:NgForm):void {
 
     if (this.formData.nombre != "" && this.formData.apellido != "" && this.formData.usuario && this.formData.email != "" && this.formData.password != "") {
 
@@ -46,7 +46,7 @@ export class RegisterComponent {
     }
 
   }
-  login() {
+  login(form:NgForm):void {
 
     this._user.login({ email: this.formLogin.email, password: this.formLogin.password })
     console.log(this.formLogin.email, this.formLogin.password)

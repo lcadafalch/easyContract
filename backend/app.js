@@ -38,7 +38,7 @@ server.use((err, req, res, next)=>{
     }
 })
 
-mongoose.connect("mongodb://www.easycontracts.es", { useUnifiedTopology: true, useNewUrlParser: true }, (err) => {
+mongoose.connect("mongodb+srv://cashroll:ePinB*2ZE@v,KP6@easycontracts-rhy0a.mongodb.net/test?retryWrites=true&w=majority", { useUnifiedTopology: true, useNewUrlParser: true }, (err) => {
     if (err) throw err;
     console.log("conexion con mongo hecha!")
 
