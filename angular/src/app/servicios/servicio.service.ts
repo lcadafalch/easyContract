@@ -12,12 +12,12 @@ export class ServicioService {
   apiUrl = "https://easycontracts.es:3000"
   cache: Object = ""
 
-
+  httpOpt:object;
   //api para precio BTC/USD
   precioUsuario: number;
 
   constructor(public _http: HttpClient, public _data: HttpClient) {
-
+    this.httpOpt = {withCredentials: true}
     console.log("servicio funciona")
   }
 
@@ -39,7 +39,7 @@ export class ServicioService {
 
       console.log(datosContrato)
 
-      let cache = this._data.post(this.apiUrl + "crearContrato", datosContrato)
+      let cache = this._data.post(this.apiUrl + "crearContrato", datosContrato, this.httpOpt)
         .subscribe((data) => {
           this.cache = data
 
@@ -51,13 +51,13 @@ export class ServicioService {
 
   // Get de recibir contratos
   recibirContratos() {
-    return this._http.get(this.apiUrl + "contrato")
+    return this._http.get(this.apiUrl + "contrato", this.httpOpt)
   }
 
   //Put de la peticion
   cambiarEstado(datosContrato, estado) {
     datosContrato.estado = estado
-    return this._http.put(this.apiUrl + "editarcontrato", datosContrato)
+    return this._http.put(this.apiUrl + "editarcontrato", datosContrato, this.httpOpt)
 
   }
 

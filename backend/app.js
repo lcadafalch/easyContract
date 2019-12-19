@@ -20,7 +20,10 @@ console.log(secrets["jwt_clave"])
 const server = express();
 
 //MIDDLEWARES
-server.use(cors())
+server.use(cors({
+    credentials: true,
+    origin: 'https://52.47.91.157'
+}))
 server.use(bodyparser.json());
 server.use(cookieparser())
 
