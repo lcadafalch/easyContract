@@ -46,6 +46,7 @@ export class UsuarioService {
 
       let cache = this._data.post(this.apiUrl + "logearUsuario", datosUsuario)
         .subscribe((data) => {
+          console.log(data)
           this.cache = data
 
         }

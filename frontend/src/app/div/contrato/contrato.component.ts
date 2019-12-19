@@ -29,14 +29,13 @@ export class ContratoComponent {
   convertirBtc() {
 
     let precioUsuario: any = (<HTMLInputElement>document.querySelectorAll("#content > div > form > div:nth-child(4) > div > input")[0]).value
-    console.log(precioUsuario)
 
     this._servicioContrato.setPrecioUsuario(precioUsuario)
     this._servicioContrato.recibirPrecioBitcoin().subscribe((servicioContrato: any) => {
 
       this.bitcoinconvertido = servicioContrato;
 
-      console.log(this.bitcoinconvertido)
+      // console.log(this.bitcoinconvertido)
     })
   }
 

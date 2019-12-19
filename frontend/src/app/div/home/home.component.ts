@@ -20,7 +20,7 @@ export class HomeComponent implements OnInit {
       this._contratos.recibirContratos()
       .subscribe((data: any) => {
         this.contratos = data
-        console.log(data)
+        // console.log(data)
       });
 
     });

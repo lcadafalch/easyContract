@@ -55,7 +55,7 @@
                 <p class="text-white-50 mb-4">Mantenga un rastro de auditoría completo, siga cada paso del proceso del
                     contrato y obtener información instantánea sobre quién mira su contrato y cuando lo tiene suscrito.
                 </p>
-                <a class="btn btn-light btn-xl js-scroll-trigger" href="#services">Empiece a usarlo!</a>
+               
             </div>
         </div>
     </div>
@@ -145,7 +145,7 @@
                         </div>
                         <div>
                             <!-- Forgot password -->
-                            <a href="">Forgot password?</a>
+                            <a href="">Has olvidado la contraseña?</a>
                         </div>
                     </div>
 
@@ -197,7 +197,10 @@
                         class="form-control" placeholder="nombre del usuario">
                         <br>
 
-
+                               <!-- billetera btc -->
+                    <input [(ngModel)]="formData.billetera" name="billetera" type="text" id="defaultRegisterFormLastName"
+                    class="form-control" placeholder="billetera bitcoin">
+                    <br>
                     <!-- E-mail -->
                     <input [(ngModel)]="formData.email" name="email" type="email" id="defaultRegisterFormEmail"
                         class="form-control mb-4" placeholder="E-mail">
@@ -217,9 +220,9 @@
                     <hr>
 
                     <!-- Terms of service -->
-                    <p>By clicking
-                        <em>Sign up</em> you agree to our
-                        <a href="" target="_blank">terms of service</a>
+                    <p>Registrandote
+                        <em>y logeandote</em> aceptas nuestros 
+                        <a href="" target="_blank">terminos de servicio</a>
 
                         <!-- Default form register -->
                 </div>

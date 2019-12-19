@@ -11,6 +11,10 @@ const usuarioSchema = new mongoose.Schema({
         type: String,
         require: true,
     },
+    billetera:{
+        type:String,
+        require:true,
+    },
     usuario: {
         type: String,
         require: true,

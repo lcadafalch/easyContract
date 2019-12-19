@@ -15,6 +15,7 @@ export class RegisterComponent {
     apellido: "",
     usuario: "",
     email: "",
+    billetera:"",
     password: "",
   }
 
@@ -38,7 +39,7 @@ export class RegisterComponent {
 
     if (this.formData.nombre != "" && this.formData.apellido != "" && this.formData.usuario && this.formData.email != "" && this.formData.password != "") {
 
-      this._user.registerUser({ nombre: this.formData.nombre, apellido: this.formData.apellido, usuario: this.formData.usuario, email: this.formData.email, password: this.formData.password })
+      this._user.registerUser({ nombre: this.formData.nombre, apellido: this.formData.apellido, usuario: this.formData.usuario,billetera:this.formData.billetera, email: this.formData.email, password: this.formData.password })
 
     } else {
       console.log("has fallado en algun campo")
@@ -52,12 +53,7 @@ export class RegisterComponent {
 
   }
 
-
-
-
 }
-
-
 
 
 

@@ -6,15 +6,17 @@ import { HomeComponent } from './div/home/home.component';
 import { RegisterComponent } from './div/register/register.component';
 import { UsuarioComponent } from './div/usuario/usuario.component';
 import { ContratoComponent } from './div/contrato/contrato.component';
-import { LoginComponent } from './div/login/login.component';
 import{RouterModule} from '@angular/router';
 
 // import módulo HTTP 
 import{HttpClientModule } from '@angular/common/http'
 
+//import Guardia
+import { AuthGuard } from './guards/auth.guard';
 
 // modulo formulario
 import { FormsModule } from '@angular/forms';
+
 
 
 // Routes
@@ -34,7 +36,6 @@ import { PremiumComponent } from './div/premium/premium.component';
     RegisterComponent,
     UsuarioComponent,
     ContratoComponent,
-    LoginComponent,
     NuevosContratosComponent,
     MisContratosComponent,
     PremiumComponent
